@@ -14,3 +14,51 @@ const floor = JSON.parse(mockFloor);
 
 const a = createFloorSvg(false, './assets/images/genplan-img.jpg', flats1, floor.size, 471, floor.flatsIds);
 document.querySelector('[data-floor-container]').innerHTML = a;
+
+
+
+
+function handleTooltip() {
+    const toolip = document.querySelector('.floor-tooltip');
+    const selfWidth = toolip.getBoundingClientRect().width;
+    const infoItems = document.querySelectorAll('[data-info-flat]');
+    let state = 'off';
+        
+
+    return function(target, action) {
+        if (action === 'off' && state === 'off') return;
+
+        console.log(target);
+      action === 'off' ? 
+      toolip.classList.remove('active') : 
+      toolip.classList.add('active')
+      ;
+
+      if (action === 'off') {
+          state = action;
+            return;
+      }
+      const { y  } = target.getBBox();
+      const { left  } = target.getBoundingClientRect();
+      toolip.style.transform = `translate(${left}px, ${y}px)`;
+
+        infoItems.forEach(el => {
+            el.textContent  = target.dataset[el.dataset.infoFlat]
+        })
+
+        state = action;
+    }
+
+}
+
+const tooltip = handleTooltip();
+
+
+document.body.addEventListener('mousemove', (evt) => {
+    if (!evt.target.closest('.js-s3d-flat__polygon')) {
+        tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'off');
+        return;
+    }
+    tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'on');
+
+})

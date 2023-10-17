@@ -21,6 +21,10 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/single-flat.bundle.js')
 block content
+  .floor-tooltip
+    div(data-info-flat="number") 1
+    div(data-info-flat="area") 2 
+    div(data-info-flat="area") 3 
   .single-floor
     .single-floor__left
       .single-floor-title INFO
