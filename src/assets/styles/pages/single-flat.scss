@@ -1,0 +1,35 @@
+.s3d-flat__to--floor {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: "open", sans-serif;
+    font-size: var(--link-fz-flat);
+    line-height: 1.3em;
+    font-weight: 500;
+    height: var(--size-btn-circle);
+    color: #072826;
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+    .s3d-flat__to--floor-icon {
+        display: flex;
+        align-items: center;
+        width: 56px;
+        height: 14px;
+        margin-left: 25px;
+        svg {
+            stroke: #072826;
+            fill: #072826;
+            transform: translateX(0);
+        }
+    }
+    @media screen and (max-width: 1600px) {
+        .s3d-flat__to--floor-icon {
+            width: 46px;
+            height: 10px;
+            margin-left: 15px;
+        }
+    }
+
+}
