@@ -5,7 +5,8 @@ const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
   entry: {
     index: './src/assets/scripts/index-app.js',
-    'single-floor': './src/assets/scripts/single-floor.js'
+    'single-floor': './src/assets/scripts/single-floor.js',
+    'single-flat': './src/assets/scripts/single-flat.js'
   },
   output: {
     filename: '[name].bundle.js',

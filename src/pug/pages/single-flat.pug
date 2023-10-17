@@ -19,11 +19,21 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
-  script(defer src='./assets/scripts/single-flat.js')
+  script(defer src='./assets/scripts/single-flat.bundle.js')
 block content
   .single-floor
-    .single-floor__left 
+    .single-floor__left
+      .single-floor-title INFO
+      table.s3d-info__table
+        tbody
+          tr.s3d-info__row(data-text='0')
+            th.s3d-info__name &Scy;&tcy;&acy;&tcy;&ucy;&scy;:
+            th.s3d-info__value(data-sale='0') &Pcy;&rcy;&ocy;&dcy;&acy;&ncy;&ocy;
+          tr.s3d-info__row(data-text='1')
+            th.s3d-info__name &Scy;&iecy;&kcy;&tscy;&iukcy;&yacy;:
+            th.s3d-info__value 1
     .single-floor__center
+      img(src="./assets/images/genplan-img.jpg")
       <button class="s3d__callback js-popup-open" data-open-call-popup="" data-popup-type="callback">
         <div class="s3d__callback-icon">
           <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +43,10 @@ block content
         </div>
         <span>Дізнатись вартість</span>
       </button>
+      <a href="#" class="s3d-flat__pdf js-s3d__create-pdf">PDF</a>
     .single-floor__right
+      div(data-floor-container)
+      include ../components/floor-nav.pug
       <a href="/single-floor?floor=10" class="s3d-flat__to--floor" id="s3d-to-floor">
         <span>Перейти до плану поверху</span>
         <div class="s3d-flat__to--floor-icon">

@@ -20,3 +20,8 @@ document.querySelectorAll('svg [data-id]').forEach(el => {
   });
 })
 
+
+
+document.body.addEventListener('mousemove',function(evt){
+    console.log(evt.target);
+});
