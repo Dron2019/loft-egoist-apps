@@ -12,10 +12,11 @@
     color: #072826;
     cursor: pointer;
     transition: color 0.4s ease-in-out;
+    text-decoration: none;
     .s3d-flat__to--floor-icon {
         display: flex;
         align-items: center;
-        width: 56px;
+        width: 7px;
         height: 14px;
         margin-left: 25px;
         svg {
@@ -77,6 +78,9 @@
     transition: .25s ease-out;
     opacity: 0;
     visibility: hidden;
+    z-index: 2;
+    pointer-events: none;
+
     &.active {
         opacity: 1;
         visibility: visible;

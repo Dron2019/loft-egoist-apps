@@ -19,7 +19,7 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
-  script(defer src='./assets/scripts/single-floor.js')
+  script(defer src='./assets/scripts/single-floor.bundle.js')
 block content
   .single-floor
     .single-floor__left 
@@ -27,30 +27,16 @@ block content
       table.s3d-info__table
         tbody
           tr.s3d-info__row(data-text='0')
-            th.s3d-info__name &Scy;&tcy;&acy;&tcy;&ucy;&scy;:
-            th.s3d-info__value(data-sale='0') &Pcy;&rcy;&ocy;&dcy;&acy;&ncy;&ocy;
+            th.s3d-info__name Всього:
+            th.s3d-info__value(data-sale='0') 10
           tr.s3d-info__row(data-text='1')
-            th.s3d-info__name &Scy;&iecy;&kcy;&tscy;&iukcy;&yacy;:
-            th.s3d-info__value 1
+            th.s3d-info__name З терасою:
+            th.s3d-info__value 4
           tr.s3d-info__row(data-text='2')
-            th.s3d-info__name &Ncy;&ocy;&mcy;&iecy;&rcy;:
-            th.s3d-info__value 2
-          tr.s3d-info__row(data-text='1_2Б')
-            th.s3d-info__name &Tcy;&icy;&pcy;:
-            th.s3d-info__value 1_2&Bcy;
-          tr.s3d-info__row(data-text='53.56')
-            th.s3d-info__name &Pcy;&lcy;&ocy;&shchcy;&acy;:
-            th.s3d-info__value 53.56 &mcy;&sup2;
-          tr.s3d-info__row(data-text='2')
-            th.s3d-info__name &Kcy;&iukcy;&mcy;&ncy;&acy;&tcy;&icy;:
-            th.s3d-info__value 2
-          tr.s3d-info__row(data-text='2')
-            th.s3d-info__name &Pcy;&ocy;&vcy;&iecy;&rcy;&khcy;:
-            th.s3d-info__value 2
-          tr.s3d-info__row(data-text='1 273 380')
-            th.s3d-info__name &TScy;&iukcy;&ncy;&acy;:
-            th.s3d-info__value 1 273 380  $
-      <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+            th.s3d-info__name Вільних:
+            th.s3d-info__value 8
+
+      <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="s3d-compass">
         <circle cx="32.5" cy="32.5" r="32.5" fill="#F4F4F4"/>
         <circle cx="32.5" cy="32.5" r="29" stroke="#411F00"/>
         <path d="M62 33C62 16.4315 49.0163 3 33 3" stroke="#411F00" stroke-width="3"/>
@@ -79,7 +65,6 @@ block content
         <a xlink:href="/single-flat?id=1012" xlink:title="The link leads to an example page that is of little interest"><polygon data-number="243" class="s3d-flat__polygon js-s3d-flat__polygon " points="1163,785,942.5,786,942,826,949.5,826,949.5,1163,1162.5,1163" data-section="2" data-area="35.41" data-life-area="0" data-rooms="1" data-type="S3" data-id="468" data-sale="0" data-sold="false" data-tippy-element=""></polygon></a>
         <a xlink:href="/single-flat?id=1013" xlink:title="The link leads to an example page that is of little interest"><polygon data-number="244" class="s3d-flat__polygon js-s3d-flat__polygon " points="949,1136,734,1134.5,734,1043.5,573,1042.5,574,1445,952,1444.5,952,1433.5,1007,1433,1006.5,1317,951,1317,949.5,1163" data-section="2" data-area="56.54" data-life-area="0" data-rooms="2" data-type="S3" data-id="469" data-sale="1" data-sold="false" data-tippy-element=""></polygon></a>
       </svg>
-      include ../components/floor-nav.pug
       button.s3d__callback.js-popup-open(data-open-call-popup='' data-popup-type='callback')
         .s3d__callback-icon
           <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,6 +73,7 @@ block content
             </svg>
         span
           | &Dcy;&iukcy;&zcy;&ncy;&acy;&tcy;&icy;&scy;&softcy; &vcy;&acy;&rcy;&tcy;&iukcy;&scy;&tcy;&softcy;
+      include ../components/floor-nav.pug
     .single-floor__right 
       .single-floor-title RIGHT
       table.s3d-info__table

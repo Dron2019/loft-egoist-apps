@@ -13,6 +13,12 @@
     background: var(--white, #F4F4F4);
     @include row-flex();
     
+    .single-floor-title {
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
     .s3d-floor__svg {
         width: 100%;
         flex-grow: 1;
@@ -29,30 +35,69 @@
     &__left {
         @include size(7);
         @include shift(0);
-        padding-left: 3.6vw;
-        padding-right: 3.6vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
         padding-top: 40px;
         padding-bottom: 40px;
-        background-color: #fff
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        .s3d-info__table {
+            padding-right: 20%;
+        }
+        .s3d-compass {
+            margin-top: auto;
+        }
     }
     
     &__center {
         @include size(10);
         @include shift(0);
-        padding-left: 3.6vw;
-        padding-right: 3.6vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
         padding-top: 40px;
         padding-bottom: 40px;
-        border-right: 1px solid #D3D4D1;;
+        border-right: 1px solid #D3D4D1;
+        display: flex;
+        flex-wrap: wrap;
+        .s3d-floor__svg,
+        .single-floor-title {
+            @include size(24);
+            @include shift(0);
+        }
+        .s3d-flat__pdf {
+            margin-top: auto;
+            margin-left: auto;
+        }
+        .s3d-floor__nav,
+        .s3d__callback {
+            @include size(12);
+            @include shift(0);
+            margin-top: auto;
+        }
     }
     
     &__right {
         @include size(7);
         @include shift(0);
-        padding-left: 3.6vw;
-        padding-right: 3.6vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
         padding-top: 40px;
         padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: center;
+
+        .s3d-info__table {
+            margin-bottom: 20px;
+        }
+
+        .s3d-floor__nav {
+            margin-bottom: 6.4vh;
+            margin-top: auto;
+        }
     }
 }
 
@@ -126,7 +171,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: 130%; /* 20.8px */
-        margin-bottom: 8px;
+        margin-bottom: 20px;
     }
 
 }
