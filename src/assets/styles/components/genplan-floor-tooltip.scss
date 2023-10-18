@@ -31,6 +31,12 @@
         line-height: 94%; /* 90.24px */
         text-transform: uppercase;
     }
+    &__mob-link {
+        color: var(--Yellow, #D2C3B5);
+        font-family: Montserrat;
+        font-size: 14px;
+
+    }
     &__text {
         color: var(--Yellow, #D2C3B5);
         font-family: Montserrat;
@@ -39,5 +45,13 @@
         font-weight: 400;
         line-height: 94%; /* 16.92px */
         text-transform: uppercase;
+    }
+}
+
+html:not(.desktop) {
+    .genplan-floor-tooltip {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 }

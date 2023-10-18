@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
 
+    --child-side-padding: 3vw;
 
 
     
@@ -35,8 +36,8 @@
     &__left {
         @include size(7);
         @include shift(0);
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: var(--child-side-padding);
+        padding-right: var(--child-side-padding);
         padding-top: 40px;
         padding-bottom: 40px;
         background-color: #fff;
@@ -54,13 +55,17 @@
     &__center {
         @include size(10);
         @include shift(0);
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: var(--child-side-padding);
+        padding-right: var(--child-side-padding);
         padding-top: 40px;
         padding-bottom: 40px;
         border-right: 1px solid #D3D4D1;
         display: flex;
         flex-wrap: wrap;
+        &>img {
+            max-height: 70vh;
+            object-fit: contain;
+        }
         .s3d-floor__svg,
         .single-floor-title {
             @include size(24);
@@ -81,8 +86,8 @@
     &__right {
         @include size(7);
         @include shift(0);
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: var(--child-side-padding);
+        padding-right: var(--child-side-padding);
         padding-top: 40px;
         padding-bottom: 40px;
         display: flex;
@@ -97,6 +102,43 @@
         .s3d-floor__nav {
             margin-bottom: 6.4vh;
             margin-top: auto;
+        }
+    }
+}
+
+
+@media screen and (max-width:1080px){
+    .single-floor {
+        position: static;
+        height: auto;
+        --child-side-padding: 10px;
+        width: auto;
+        .s3d-info__table {
+            padding-right: 0;
+        }
+        &__right {
+            @include size(24);
+        }
+        &__left {
+            @include size(24);
+        }
+        &__center {
+            @include size(24);
+            &>img {
+                height: auto;
+                width: 100%;
+                padding-bottom: 10px;
+                max-height: none;
+            }
+            .s3d-floor__nav,
+            .s3d__callback {
+                @include size(24);
+                @include shift(0);
+                margin-top: auto;
+            }
+            .s3d__callback  {
+                margin-bottom: 20px;
+            }
         }
     }
 }

@@ -1,0 +1,29 @@
+.floor-tooltip {
+    display: inline-flex;
+    padding: 11px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--Brown, #411F00);
+    background: var(--white, #F4F4F4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: .25s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    pointer-events: none;
+
+    @at-root html:not(.desktop) &{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        pointer-events: all;
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
