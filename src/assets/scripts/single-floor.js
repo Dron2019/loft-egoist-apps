@@ -1,4 +1,4 @@
-
+import 'current-device';
 
 function handleTooltip(evt) {
     const infoItems = document.querySelectorAll('[data-info-flat]');

@@ -1,3 +1,4 @@
+import 'current-device';
 const { default: createFloorSvg } = require("./modules/createFloorSvg");
 import * as flats from './testData/flats.json';
 import * as mockFloor from './testData/mockFloor.json';
