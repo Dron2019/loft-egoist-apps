@@ -15,13 +15,71 @@ const tooltip = handleTooltip();
 
 
 document.querySelectorAll('svg [data-id]').forEach(el => {
-  el.addEventListener('mouseenter',function(evt){
+  el.addEventListener(document.documentElement.classList.contains('desktop') ? 'mouseenter' : 'click',function(evt){
+    console.log(evt.target);
     tooltip(evt);
   });
 })
 
 
+function handleMobileFloorClick() {
+  function handleTooltip(params = {}) {
+    const toolip = document.querySelector('.floor-tooltip');
+    const selfWidth = toolip.getBoundingClientRect().width;
+    const infoItems = document.querySelectorAll('[data-info-flat]');
+    let state = 'off';
+    
+        
 
-document.body.addEventListener('mousemove',function(evt){
-    console.log(evt.target);
-});
+    return function(target, action) {
+        if (action === 'off' && state === 'off') return;
+        action === 'off' ? 
+        toolip.classList.remove('active') : 
+        toolip.classList.add('active');
+
+        if (action === 'off') {
+            state = action;
+                return;
+        }
+        const { y  } = target.getBBox();
+        const { left, top  } = target.getBoundingClientRect();
+        params.dontPositionTooltip ? null : toolip.style.transform = `translate(${left - selfWidth / 2}px, ${top}px)`;
+
+        infoItems.forEach(el => {
+            el.textContent  = target.dataset[el.dataset.infoFlat]
+        });
+        if (typeof params.additionalAction === 'function') params.additionalAction(toolip, target.dataset.id);
+
+
+
+        state = action;
+    }
+
+}
+
+  const tooltip = handleTooltip({
+    dontPositionTooltip: !document.documentElement.classList.contains('desktop'),
+    additionalAction: (tooltip, flatId) => {
+        if (document.documentElement.classList.contains('desktop')) return;
+        if (!tooltip.querySelector('[data-mobile-tooltip-link]')) {
+            tooltip.insertAdjacentHTML('beforeend', `
+                <a data-mobile-tooltip-link href="#">Перейти</a>
+            `)
+        }
+        tooltip.querySelector('[data-mobile-tooltip-link]').setAttribute('href', `/single-flat?id=${flatId}`);
+    }
+  });
+  
+  if (!document.documentElement.classList.contains('desktop')) {
+    document.body.addEventListener('click', (evt) => {
+        if (!evt.target.closest('.js-s3d-flat__polygon')) {
+            tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'off');
+            return;
+        }
+        evt.preventDefault();
+        tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'on');
+    })
+  }
+}
+
+handleMobileFloorClick();

@@ -3,6 +3,7 @@ const { default: createFloorSvg } = require("./modules/createFloorSvg");
 import * as flats from './testData/flats.json';
 import * as mockFloor from './testData/mockFloor.json';
 import { useState } from './modules/helpers/helpers';
+import Popup from './modules/popup/PopupView';
 
 const flats1 = flats.default;
 const floorInfo = mockFloor.default;
@@ -124,3 +125,12 @@ if (document.documentElement.classList.contains('desktop')) {
         tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'on');
     })
 }
+
+
+
+document.body.addEventListener('click', (evt) => {
+    const target = evt.target.closest('img');
+    if (!target) return;
+
+    new Popup(target.getAttribute('src')).render();
+})

@@ -10,11 +10,10 @@ if (document.documentElement.classList.contains('desktop')) {
       return function(evt, action) {
         action === 'off' ? 
         toolip.classList.remove('active') : 
-        toolip.classList.add('active')
-        ;
+        toolip.classList.add('active');
         const { y  } = evt.target.getBBox();
         const { left  } = evt.target.getBoundingClientRect();
-        toolip.style.transform = `translate(${left- selfWidth}px, ${y}px)`;
+        toolip.style.transform = `translate(${Math.max(left- selfWidth, 0)}px, ${y}px)`;
         text.textContent = evt.target.dataset.floor;
       }
   

@@ -15,6 +15,10 @@
     z-index: 2;
     pointer-events: none;
 
+    [data-mobile-tooltip-link] {
+        color: var(--Brown, #411F00);;
+    }
+
     @at-root html:not(.desktop) &{
         left: 50%;
         top: 50%;

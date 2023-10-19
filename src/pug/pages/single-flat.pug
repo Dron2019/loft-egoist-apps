@@ -21,15 +21,7 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/single-flat.bundle.js')
 block content
-  .floor-tooltip
-    div
-      span(data-info-flat="number") 1
-    div
-      span кім:
-      span(data-info-flat="area") 2 
-    div
-      span(data-info-flat="area") 3 
-      span м2
+  include ../components/floot-tooltip.pug
   .single-floor
     .single-floor__left
       .single-floor-title INFO
