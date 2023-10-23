@@ -63,7 +63,7 @@ function handleMobileFloorClick() {
         if (document.documentElement.classList.contains('desktop')) return;
         if (!tooltip.querySelector('[data-mobile-tooltip-link]')) {
             tooltip.insertAdjacentHTML('beforeend', `
-                <a data-mobile-tooltip-link href="#">Перейти</a>
+                <a data-mobile-tooltip-link href="#">Перейти до квартири</a>
             `)
         }
         tooltip.querySelector('[data-mobile-tooltip-link]').setAttribute('href', `/single-flat?id=${flatId}`);
@@ -75,6 +75,10 @@ function handleMobileFloorClick() {
         if (!evt.target.closest('.js-s3d-flat__polygon')) {
             tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'off');
             return;
+        }
+        if (evt.target.closest('.floor-tooltip__close')) {
+          tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'off');
+          return;
         }
         evt.preventDefault();
         tooltip(evt.target.closest('.js-s3d-flat__polygon'), 'on');

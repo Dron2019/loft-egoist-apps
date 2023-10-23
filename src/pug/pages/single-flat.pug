@@ -18,13 +18,13 @@ block meta
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/vendors.bund le.js')
   script(defer src='./assets/scripts/single-flat.bundle.js')
 block content
   include ../components/floot-tooltip.pug
-  .single-floor
+  .single-floor.single-flat
     .single-floor__left
-      .single-floor-title INFO
+      .single-floor-title 3-кімнатна
       table.s3d-info__table
         tbody
           tr.s3d-info__row(data-text='0')

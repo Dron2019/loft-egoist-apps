@@ -1,0 +1,40 @@
+
+.s3d-flat__pdf {
+    --size-btn-circle: 65px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: var(--size-btn-circle);
+    width: var(--size-btn-circle);
+    transition: border 0.3s ease-in;
+    text-decoration: none;
+    margin: 40px 0 0 auto;
+    border-radius: 50%;
+    border-radius: 100px;
+    background: var(--Brown, #411F00);
+    z-index: 2;
+    color: var(--White, #EDE2E7);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 20.8px */
+    text-transform: uppercase;
+    text-transform: uppercase;
+    flex-grow: 0;
+    flex-shrink: 0;
+    &:hover {
+        border-color: #072826;
+    }
+}
+
+html:not(.desktop) {
+    .s3d-flat__pdf {
+        --size-btn-circle: 48px; 
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 15.6px */
+    }
+}

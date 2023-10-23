@@ -39,7 +39,7 @@ if (document.documentElement.classList.contains('desktop')) {
   const toolip = document.querySelector('[data-genplan-tooltip]');
   const text = toolip.querySelector('[data-genplan-tooltip-text]');
   toolip.insertAdjacentHTML('beforeend', `
-    <a class="genplan-floor-tooltip__mob-link" href="" data-mobile-floor-link>Перейти</a>
+    <a class="genplan-floor-tooltip__mob-link" href="" data-mobile-floor-link>Перейти до поверху</a>
   `);
   const link = toolip.querySelector('[data-mobile-floor-link]');
 
@@ -50,6 +50,12 @@ if (document.documentElement.classList.contains('desktop')) {
       toolip.classList.remove('active');
       return;
     }
+    
+    if (evt.target.closest('.genplan-floor-tooltip__close')) {
+      toolip.classList.remove('active');
+      return;
+    }
+
     // if (!isTooltip) return;
     toolip.classList.add('active');
     
@@ -62,5 +68,5 @@ if (document.documentElement.classList.contains('desktop')) {
 
 
 if (!document.documentElement.classList.contains('desktop')) {
-  document.querySelector(".genplan-svg").scrollTo(1500, 0)
+  document.querySelector(".genplan-svg").scrollTo(document.querySelector(".genplan-svg").scrollWidth / 2, 0)
 }

@@ -1,3 +1,15 @@
+.single-flat {
+
+}
+
+html:not(.desktop) {
+    .single-flat {
+        .single-floor__right {
+            display: flex;
+        }
+    }
+}
+
 .s3d-flat__to--floor {
     display: flex;
     align-items: center;
@@ -27,7 +39,7 @@
     }
     @media screen and (max-width: 1600px) {
         .s3d-flat__to--floor-icon {
-            width: 46px;
+            width: auto;
             height: 10px;
             margin-left: 15px;
         }
@@ -36,31 +48,5 @@
 }
 
 
-.s3d-flat__pdf {
-    --size-btn-circle: 65px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: var(--size-btn-circle);
-    width: var(--size-btn-circle);
-    transition: border 0.3s ease-in;
-    text-decoration: none;
-    margin: 40px 0 0 auto;
-    border-radius: 50%;
-    border: 1px solid rgba(152, 152, 152, 0.25);
-    z-index: 2;
-    font-family: $default-font, sans-serif;
-    font-size: 16px;
-    line-height: 1.3em;
-    font-weight: 500;
-    color: #072826;
-    text-transform: uppercase;
-    flex-grow: 0;
-    flex-shrink: 0;
-    &:hover {
-        border-color: #072826;
-    }
-}
 
 

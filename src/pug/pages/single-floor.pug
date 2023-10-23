@@ -76,19 +76,22 @@ block content
           | &Dcy;&iukcy;&zcy;&ncy;&acy;&tcy;&icy;&scy;&softcy; &vcy;&acy;&rcy;&tcy;&iukcy;&scy;&tcy;&softcy;
       include ../components/floor-nav.pug
     .single-floor__right 
-      .single-floor-title RIGHT
+      .single-floor-title 
+        span(data-info-flat="rooms")
+        span -кімнатна
       table.s3d-info__table
         tbody
           tr.s3d-info__row(data-text='0')
-            th.s3d-info__name &Scy;&tcy;&acy;&tcy;&ucy;&scy;:
+            th.s3d-info__name Загальна площа:
             th.s3d-info__value(data-sale='0') 
               span(data-info-flat="area")
+              span м²
           tr.s3d-info__row(data-text='1')
-            th.s3d-info__name &Scy;&iecy;&kcy;&tscy;&iukcy;&yacy;:
+            th.s3d-info__name Тип:
             th.s3d-info__value 
               span(data-info-flat="type")
           tr.s3d-info__row(data-text='2')
-            th.s3d-info__name &Ncy;&ocy;&mcy;&iecy;&rcy;:
+            th.s3d-info__name Номер:
             th.s3d-info__value 
               span(data-info-flat="number")
       <a href="/" class="s3d-flat__to--floor" id="s3d-to-floor">

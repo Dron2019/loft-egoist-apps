@@ -14,9 +14,12 @@
 
     --size-btn-circle: 65px;
     justify-items: center;
+    p {
+        font-family: Tenor Sans;
+    }
     .s3d-floor__nav-title {
-        color: var(--grey, #989898);
-        font-family: $default-font;
+        color: var(--Brown, #411F00); 
+        font-family: $default-font2;
         font-size: 19px;
         font-style: normal;
         font-weight: 400;
@@ -62,4 +65,10 @@
     stroke: #072826;
     fill: none;
     pointer-events: none;
+}
+
+html:not(.desktop) {
+    .s3d-floor__nav {
+        --size-btn-circle: 48px;
+    }
 }

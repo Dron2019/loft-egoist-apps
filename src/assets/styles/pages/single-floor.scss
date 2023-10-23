@@ -117,33 +117,66 @@
     .single-floor {
         position: static;
         height: auto;
-        --child-side-padding: 10px;
+        --child-side-padding: 20px;
         width: auto;
+
+        .s3d-compass {
+            display: none; 
+        }
         .s3d-info__table {
             padding-right: 0;
         }
+        .single-floor-title {
+            margin-bottom: 20px;
+        }
         &__right {
             @include size(24);
+            display: none;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         &__left {
             @include size(24);
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         &__center {
             @include size(24);
+            padding-top: 20px;
+            padding-bottom: 20px;
             &>img {
                 height: auto;
                 width: 100%;
                 padding-bottom: 10px;
                 max-height: none;
             }
-            .s3d-floor__nav,
+            .s3d-floor__nav {
+                @include size(12);
+                @include shift(0);
+                margin-top: auto;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%; /* 25.2px */
+                letter-spacing: -0.36px;
+                text-transform: uppercase;
+                gap: 12px;
+                .s3d-floor__nav-title {
+                    display: none;
+                }
+            }
             .s3d__callback {
-                @include size(24);
+                @include size(12);
                 @include shift(0);
                 margin-top: auto;
             }
-            .s3d__callback  {
+            .s3d-floor__svg { 
                 margin-bottom: 20px;
+            }
+            .s3d__callback  {
+                margin-top: 0; 
+                align-self: center;
+                margin-bottom: 0;
             }
         }
     }
@@ -159,101 +192,12 @@
     /* 58.8px */
     letter-spacing: -0.84px;
     text-transform: uppercase;
-}
-
-
-.s3d-info__table {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 8px;
-    width: 100%;
-
-    &::-webkit-scrollbar {
-        width: 2px;
-    }
-
-    &::-webkit-scrollbar-track {
-        -webkit-box-shadow: none;
-        background: #8F9393;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: black;
-        -webkit-box-shadow: none;
-    }
-
-    &::-webkit-scrollbar-thumb:window-inactive {
-        background: black;
-    }
-
-    .s3d-info__row {
-        .s3d-info__value {
-            padding: 2px 8px;
-            border-radius: 12px;
-        }
-    }
-
-    .s3d-info__name {
-        display: flex;
-        align-items: flex-end;
-        flex-grow: 1;
-        white-space: nowrap;
-    }
-
-    .s3d-info__name:after {
-        content: "";
-        display: flex;
-        flex: 1 1 5%;
-        margin: 0 0.5ch 0.4ch;
-        border-bottom: 1px solid rgba(134, 137, 126, 0.25);
-    }
-
-    .s3d-info__row {
-        display: flex;
-        align-items: flex-end;
-        color: var(--Brown, #411F00);
-        font-family: Montserrat;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%; /* 20.8px */
-        margin-bottom: 20px;
-    }
-
-}
-.s3d-info__table tbody {
-    width: 100%;
-}
-
-
-
-.s3d__callback {
-    --link-fz-flat: 16px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    background: none;
-    border: none;
-    height: min-content;
-    font-family: $default-font, sans-serif;
-    font-weight: 500;
-    font-size: var(--link-fz-flat);
-    line-height: 130%;
-    color: #072826;
-    cursor: pointer;
-    padding: 0;
-    .s3d__callback-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: var(--size-btn-circle);
-        width: var(--size-btn-circle);
-        flex: 0 0 auto;
-        margin-right: 25px;
-        border-radius: 50%;
-        background: #072826;
-        transition: background-color 0.4s ease-in-out;
+    @include to(1024px){
+            font-size: 32px;
     }
 }
+
+
+
+
+
