@@ -1,5 +1,19 @@
 .single-flat {
+    .single-floor__right {
+        .s3d-flat__to--floor {
+            margin-top: 0;
+        }
+    }
+}
 
+.desktop {
+    .single-flat {
+        .single-floor__right {
+            [data-floor-container] {
+                margin-top: auto;
+            }
+        }
+    }
 }
 
 html:not(.desktop) {
