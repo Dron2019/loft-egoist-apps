@@ -71,6 +71,7 @@ export default class MyToster {
 
   listeners() {
     const self = this;
+    if (!this.$wrap) return;
     this.$wrap.addEventListener('click', ({ target }) => {
       if (target.closest('[data-toast-colose-btn]') !== null) {
         const item = target.closest('[data-toast-item]');

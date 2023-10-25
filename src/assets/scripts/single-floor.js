@@ -1,4 +1,5 @@
 import 'current-device';
+import './modules/form';
 
 function handleTooltip(evt) {
     const infoItems = document.querySelectorAll('[data-info-flat]');
