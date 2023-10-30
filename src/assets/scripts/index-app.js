@@ -13,7 +13,7 @@ if (document.documentElement.classList.contains('desktop')) {
         toolip.classList.add('active');
         const { y  } = evt.target.getBBox();
         const { left  } = evt.target.getBoundingClientRect();
-        toolip.style.transform = `translate(${Math.max(left- selfWidth, 0)}px, ${y}px)`;
+        toolip.style.transform = `translate(${Math.max(left- selfWidth, 0)}px, ${evt.clientY - selfWidth / 2}px)`;
         text.textContent = evt.target.dataset.floor;
       }
   
