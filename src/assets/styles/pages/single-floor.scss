@@ -65,7 +65,6 @@
         &>img {
             max-height: 70vh;
             object-fit: contain;
-            
             cursor: pointer;
         }
         .s3d-floor__svg,
@@ -177,6 +176,18 @@
                 margin-top: 0; 
                 align-self: center;
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.desktop {
+    .single-floor {
+        &__center {
+            &>img {
+                padding-top: 65px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
