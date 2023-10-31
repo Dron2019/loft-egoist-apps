@@ -20,7 +20,24 @@ document.querySelectorAll('svg [data-id]').forEach(el => {
     console.log(evt.target);
     tooltip(evt);
   });
-})
+});
+
+if (document.documentElement.classList.contains('desktop')) {
+  document.querySelectorAll('svg [data-id]').forEach(el => {
+    el.addEventListener('mouseleave',function(evt){
+      const infoItems = document.querySelectorAll('[data-info-flat]');
+      infoItems.forEach(el => {
+          el.textContent  = ''
+      })
+
+
+    });
+  });
+
+}
+
+
+
 
 
 function handleMobileFloorClick() {
@@ -40,6 +57,9 @@ function handleMobileFloorClick() {
 
         if (action === 'off') {
             state = action;
+            infoItems.forEach(el => {
+                el.textContent  = '';
+            });
                 return;
         }
         const { y  } = target.getBBox();
