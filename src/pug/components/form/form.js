@@ -17,64 +17,6 @@ const lang = langDetect();
     lng: lang, // Текущий язык
     debug: true,
     resources: {
-      ru: {
-        // Тексты конкретного языка
-        translation: {
-          // Так называемый namespace по умолчанию
-          name: 'Имя:*',
-          phone: 'Телефон:*',
-          send: 'Отправить',
-          sending: 'Отправка',
-          field_too_short: 'телефон должен содержать не менее {{cnt}} символов',
-          field_too_long: 'телефон должен содержать не более {{cnt}} символов',
-          only_number: 'здесь только цифры',
-          required: 'это поле обязательне',
-          sendingSuccessTitle: 'Cообщение отправлено',
-          sendingSuccessText: 'Ждите ответа наших менеджеров',
-          sendingErrorText: 'Ждите ответа наших менеджеров',
-          sendingErrorTitle: 'Ошибка',
-          send_fail: 'Сообщение не было отправлено за неизвестной ошибки сервера. Код: [send_fail]',
-          invalid_form:
-            'Сообщение не было отправлено за неизвестной ошибки сервера. Код: [invalid_form]',
-          front_error:
-            'Сообщение не было отправлено за неизвестной ошибки сервера. Код: [front_error]',
-          invalid_upload_file: 'Ошибка загрузки файла. Код: [invalid_upload_file]',
-          invalid_recaptcha: 'Заполните капчу и попробуйте еще раз снова. Код: [invalid_recaptcha]',
-          connectionFailed: 'Ошибка соединения с CRM',
-        },
-      },
-      tr: {
-        translation: {
-          name : "Adınız Soyadınız :*",
-          title : "Fiyat teklifi al",
-          phone : "Telefon:*",
-          send : "Gönder",
-          email: "E-Posta",
-          agreement: "KVKK <a target='_blank' href='https://ramsturkiye.com.tr/{{lng}}/kvkk'>gizlilik şartlarını</a> okudum anladım.*",
-          description: 'E-posta Adresiniz',
-          sending : "Gönderiyor",
-          thank_title: "TEŞEKKÜR EDERİZ",
-          thank_description: "Formunuz tarafımıza ulaşmıştır. En kısa sürede sizinle iletişime geçeceğiz.  ",
-          thank_back_to_choose: "Daire Seçimine Geri Dön",
-          thank_back_to_site: "Web Sitesine Geri Dön",
-          field_too_short : "Telefon en az {{cnt}} karakter olmalı ",
-          field_too_long : "Telefon en çok  {{cnt}} karakter olmalı",
-          field_only_letter : "İsim sadece harf içermelidir ",
-          field_more_letter : "İsim en çok 30 harf içerebilir",
-          only_number : "Buraya sadece rakamlar",
-          required : "bu alan gereklidir",
-          sendingSuccessTitle : "Mesaj gönderildi",
-          sendingSuccessText : "Yöneticilerimizden cevap bekleyiniz",
-          sendingErrorText : "Yöneticilerimizden cevap bekleyiniz",
-          sendingErrorTitle : "Bir hata oluştu",
-          send_fail : "İleti, bilinmeyen bir sunucu hatası nedeniyle gönderilmedi. Kod: [send_fail] ",
-          invalid_form : "The message was not sent for an unknown server error. Code: [invalid_form] ",
-          front_error : "Sonucu hatasından dolayı mesaj gönderilemedi. Code: [front_error] ",
-          invalid_upload_file : "Dosya yükleme hatası. Code: [invalid_upload_file] ",
-          invalid_recaptcha : "Lütfen captcha'yı doldurun ve tekrar deneyin. Code: [invalid_recaptcha] ",
-          connectionFailed : "Server sunucu bağlantı hatası",
-        },
-      },
       uk: {
         // Тексты конкретного языка
         translation: {
@@ -235,6 +177,7 @@ export default class FormMonster {
           // if (true) {
           if (error === 0) {
             this.watchedState.status = 'successSand';
+            window.dispatchEvent(new Event('succesFormSend'));
             return true;
           }
           /* eslint-disable-next-line */
